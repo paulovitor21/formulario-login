@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+       <h1>Fazer login</h1>
+
+       <form action="">
+      
+           <label for="text">
+               <span>CPF</span>
+               <input 
+                    type="text"
+                    id="cpf"
+                    name="cpf" 
+                    pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})"
+                    minlength="11"
+                    maxlength="11" required
+                    placeholder="Apenas números"
+                />
+           </label>
+
+           <label for="pass">
+               <span>Senha</span>
+               <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    minlength="6" required 
+                    placeholder="Apenas numeros"
+                />
+           </label>
+           
+           <input type="submit" value="Login" id="button" onclick="validar()">
+       </form>
+    </main>
+    
+    <section class="images">
+        <img src="/assets/mobile.svg" alt="Mobile">
+        <div class="circle"></div>
+    </section>
+    
+    <script>
+         function validar() {
+             var cpf = document.getElementById("cpf");
+             var password = document.getElementById("password");
+
+            // não permite que o usuario digite dados invalidos
+             if (cpf.value == "") {
+                alert("Preencha o campo CPF 😖");
+                 cpf.focus();
+                return;
+             }
+             if (cpf.value == "00000000000"){
+                alert("Preencha o campo senha 😖");
+                cpf.focus();
+                return;
+             }
+             
+             
+             return alert("Bem-Vindo!. Carregando o sistema... 🤗");
+        }
+    </script>
+</body>
+</html>
